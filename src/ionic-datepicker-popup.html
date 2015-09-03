@@ -53,7 +53,7 @@
       'date_selected': (dayList[$parent.$index * numColumns + $index].dateString === selctedDateStringCopy && dayList[$parent.$index * numColumns + $index].day != undefined) ,
       'today' : (dayList[$parent.$index * numColumns + $index].date == today.date && dayList[$parent.$index * numColumns + $index].month == today.month && dayList[$parent.$index * numColumns + $index].year == today.year)}">
           <div class="date_cell" ng-click="dateSelected(dayList[$parent.$index * numColumns + $index])"
-               ng-class="{'pointer_events_none':(disabledDates.indexOf(dayList[$parent.$index * numColumns + $index].epochLocal) > -1) || (enableDatesFrom.isSet && enableDatesFrom.epoch > dayList[$parent.$index * numColumns + $index].epochLocal) || (enableDatesTo.isSet && enableDatesTo.epoch < dayList[$parent.$index * numColumns + $index].epochLocal)}">
+               ng-class="{'pointer_events_none':(disabledDates.indexOf(dayList[$parent.$index * numColumns + $index].epochLocal) > -1) || (enableDatesFrom.isSet && enableDatesFrom.epoch > dayList[$parent.$index * numColumns + $index].epochLocal) || (enableDatesTo.isSet && enableDatesTo.epoch < dayList[$parent.$index * numColumns + $index].epochLocal) || dayList[$parent.$index * numColumns + $index].day === undefined}">
             {{ dayList[$parent.$index * numColumns + $index].date }}
           </div>
         </div>
