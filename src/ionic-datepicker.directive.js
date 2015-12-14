@@ -272,6 +272,11 @@
         }).then(function (modal) {
           scope.modal = modal;
         });
+
+        scope.$on('$destroy', function() {
+          scope.modal.remove();
+        });
+
         scope.openModal = function () {
           scope.modal.show();
         };
