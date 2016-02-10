@@ -278,11 +278,15 @@
         });
 
         scope.openModal = function () {
-          scope.modal.show();
+          scope.modal.show().then(function(){
+            $("year_select").disabled = false;
+          });
         };
 
         scope.closeModal = function () {
-          scope.modal.hide();
+          scope.modal.hide().then(function(){
+            $("year_select").disabled = true;
+          });;
         };
 
         //Called when the user clicks on the button to invoke the 'ionic-datepicker'
@@ -319,7 +323,9 @@
                   }
                 }
               ]
-            });
+            }).then(function(){
+              $("year_select").disabled = false;
+            });;
           }
         });
       }
